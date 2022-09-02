@@ -1,4 +1,5 @@
 
+
 package main
 
     import (
@@ -18,7 +19,7 @@ package main
         
         dp[1] = 0
         
-        for i := 2; i <= n; i++ {
+        for i := 1; i <= n; i++ {
             
             dp[i] = 999999
             
@@ -29,12 +30,6 @@ package main
                 }
             }
             
-            if i % 3 == 0 {
-                var x = dp[i / 3]
-                if (x + 1 < dp[i]) {
-                    dp[i] = x + 1;
-                }
-            }
             
             var x = dp[i-1]
             if x+1 < dp[i] {
@@ -43,3 +38,4 @@ package main
         }
         return dp[n]
     }
+
